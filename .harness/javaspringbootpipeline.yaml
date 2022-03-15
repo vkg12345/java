@@ -35,3 +35,11 @@ pipeline:
                                     command: |-
                                         mvn --version
                                         mvn clean package
+                          - step:
+                                type: ArtifactoryUpload
+                                name: upload artifact
+                                identifier: upload_artifact
+                                spec:
+                                    connectorRef: jfrog_harness_atprojectlevel
+                                    target: https://harnessdev.jfrog.io/lib/
+                                    sourcePath: /harness/target/
