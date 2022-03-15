@@ -42,4 +42,4 @@ pipeline:
                                 spec:
                                     connectorRef: artifactory
                                     target: https://harnessdev.jfrog.io/lib/
-                                    sourcePath: /harness/target/
+                                    sourcePath: /harness/target/javaapi-0.0.1-SNAPSHOT.jar
