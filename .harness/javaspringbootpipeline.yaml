@@ -50,6 +50,8 @@ pipeline:
                                       identifier: building_and_pushing
                                       spec:
                                           connectorRef: Jfrog_harness_integration
-                                          repo: docker-local
+                                          repo: harnessdev.jfrog.io/docker-local
                                           tags:
-                                              - java
+                                              - <+pipeline.sequenceid>
+                                          dockerfile: /harness/Dockerfile
+                                          context: "."
