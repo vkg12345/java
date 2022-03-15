@@ -35,23 +35,22 @@ pipeline:
                                     command: |-
                                         mvn --version
                                         mvn clean package
-                          - parallel:
-                                - step:
-                                      type: ArtifactoryUpload
-                                      name: upload artifact
-                                      identifier: upload_artifact
-                                      spec:
-                                          connectorRef: artifactory
-                                          target: lib/
-                                          sourcePath: /harness/target/*.jar
-                                - step:
-                                      type: BuildAndPushDockerRegistry
-                                      name: building and pushing
-                                      identifier: building_and_pushing
-                                      spec:
-                                          connectorRef: Jfrog_harness_integration
-                                          repo: harnessdev.jfrog.io/docker-local
-                                          tags:
-                                              - <+pipeline.sequenceid>
-                                          dockerfile: /harness/Dockerfile
-                                          context: "."
+                          - step:
+                                type: BuildAndPushDockerRegistry
+                                name: building and pushing
+                                identifier: building_and_pushing
+                                spec:
+                                    connectorRef: Jfrog_harness_integration
+                                    repo: harnessdev.jfrog.io/docker-local/
+                                    tags:
+                                        - <+pipeline.sequenceid>
+                                    dockerfile: Dockerfile
+                                    context: "."
+                          - step:
+                                type: ArtifactoryUpload
+                                name: upload artifact
+                                identifier: upload_artifact
+                                spec:
+                                    connectorRef: artifactory
+                                    target: lib/
+                                    sourcePath: /harness/target/*.jar
