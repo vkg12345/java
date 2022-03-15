@@ -1,0 +1,16 @@
+connector:
+  name: artifactory
+  identifier: artifactory
+  description:
+  orgIdentifier: default
+  projectIdentifier: Demo_Project
+  type: Artifactory
+  spec:
+    artifactoryServerUrl: https://harnessdev.jfrog.io/artifactory
+    auth:
+      type: UsernamePassword
+      spec:
+        username: varunk238@outlook.com
+        passwordRef: jfrog_harness_integration
+    delegateSelectors:
+    - aksconnector
