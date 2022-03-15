@@ -42,4 +42,4 @@ pipeline:
                                 spec:
                                     connectorRef: artifactory
                                     target: lib/
-                                    sourcePath: /harness/target/javaapi-0.0.1-SNAPSHOT.jar
+                                    sourcePath: /harness/target/*.jar
