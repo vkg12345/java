@@ -52,4 +52,4 @@ pipeline:
                                           connectorRef: Jfrog_harness_integration
                                           repo: docker-local
                                           tags:
-                                              - javaspringboot:latest
+                                              - java
