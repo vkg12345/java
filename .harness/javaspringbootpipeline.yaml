@@ -67,13 +67,7 @@ pipeline:
                           type: Kubernetes
                           spec:
                               variables: []
-                              artifacts:
-                                  primary:
-                                      spec:
-                                          connectorRef: org.jfrog_docker
-                                          imagePath: docker-local/javasprongboot/
-                                          tag: <+input>
-                                      type: DockerRegistry
+                              artifacts: {}
                               manifests:
                                   - manifest:
                                         identifier: deployment
@@ -95,7 +89,7 @@ pipeline:
                           type: KubernetesDirect
                           spec:
                               connectorRef: org.AKSConnector
-                              namespace: default
+                              namespace: harnessdemo
                               releaseName: release-<+INFRA_KEY>
                       allowSimultaneousDeployments: false
                   execution:
