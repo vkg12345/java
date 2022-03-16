@@ -88,8 +88,8 @@ pipeline:
                                                     branch: master
                                             skipResourceVersioning: false
                                   - manifest:
-                                        identifier: values
-                                        type: K8sManifest
+                                        identifier: values1
+                                        type: Values
                                         spec:
                                             store:
                                                 type: Github
@@ -100,7 +100,6 @@ pipeline:
                                                         - values.yaml
                                                     repoName: java
                                                     branch: master
-                                            skipResourceVersioning: false
                   infrastructure:
                       environmentRef: dev
                       infrastructureDefinition:
