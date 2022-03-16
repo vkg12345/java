@@ -54,7 +54,7 @@ pipeline:
                                           target: lib/
                                           sourcePath: /harness/target/*.jar
         - stage:
-              name: dev approval
+              name: approval
               identifier: dev_approval
               description: ""
               type: Approval
@@ -77,24 +77,13 @@ pipeline:
                                         userGroups:
                                             - account.dev_approval
                                     approverInputs: []
-                                failureStrategies:
-                                    - onFailure:
-                                          errors:
-                                              - AllErrors
-                                          action:
-                                              type: Abort
-                                    - onFailure:
-                                          errors:
-                                              - AllErrors
-                                          action:
-                                              type: Abort
               tags: {}
               failureStrategies:
                   - onFailure:
                         errors:
-                            - Unknown
+                            - AllErrors
                         action:
-                            type: Abort
+                            type: StageRollback
         - stage:
               name: deploy
               identifier: deploy
