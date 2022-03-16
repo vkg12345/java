@@ -32,3 +32,15 @@ spec:
       containers:
       - name: {{.Values.name}}
         image: {{.Values.image}}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{.Values.name}}-service
+spec:
+  selector:
+    app: {{.Values.name}}
+  ports:
+    - port: 8080
+      targetPort: 8080
+  type: LoadBalancer
