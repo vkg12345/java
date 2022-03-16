@@ -1,4 +1,3 @@
-...
 {{- if .Values.dockercfg}}
 apiVersion: v1
 kind: Secret
@@ -33,4 +32,3 @@ spec:
       containers:
       - name: {{.Values.name}}
         image: {{.Values.image}}
-...
