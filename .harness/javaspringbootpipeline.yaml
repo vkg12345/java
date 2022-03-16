@@ -88,7 +88,7 @@ pipeline:
                                                     branch: master
                                             skipResourceVersioning: false
                                   - manifest:
-                                        identifier: values1
+                                        identifier: values
                                         type: Values
                                         spec:
                                             store:
