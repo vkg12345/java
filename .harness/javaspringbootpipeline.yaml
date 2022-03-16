@@ -32,8 +32,9 @@ pipeline:
                                 spec:
                                     connectorRef: Jfrog_harness_integration
                                     image: harnessdev.jfrog.io/default-docker-remote/maven:latest
-                                    command: |-
+                                    command: |
                                         mvn --version
+                                        echo '<+secrets.getValue("account.maven_settings_xml")>' >~/.m2/settings.xml
                                         mvn clean package
                           - parallel:
                                 - step:
