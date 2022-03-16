@@ -1,4 +1,4 @@
-name: testing
+name: javaspringboot
 replicas: 2
 
 image: <+artifact.image>
