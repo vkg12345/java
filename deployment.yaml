@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: javaspring
-        image: harnessdev.jfrog.io/artifactory/docker-local/javasprongboot:latest
+        image: harnessdev.jfrog.io/docker-local/javasprongboot:latest
         ports:
         - containerPort: 8080
