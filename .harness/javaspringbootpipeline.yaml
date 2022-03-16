@@ -92,7 +92,7 @@ pipeline:
               failureStrategies:
                   - onFailure:
                         errors:
-                            - AllErrors
+                            - Unknown
                         action:
                             type: Abort
         - stage:
