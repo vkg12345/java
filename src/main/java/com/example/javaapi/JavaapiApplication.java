@@ -12,7 +12,7 @@ public class JavaapiApplication {
 	}
 	
 	@GetMapping("/api")  
-	private List<Books> getAllBooks()   
+	private String getAllBooks()   
 	{  
 	return "deployed sucessfully first image";  
 	}  
