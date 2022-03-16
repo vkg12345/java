@@ -22,7 +22,7 @@ pipeline:
                       type: KubernetesDirect
                       spec:
                           connectorRef: org.AKSConnector
-                          namespace: d
+                          namespace: harnessdemo
                   execution:
                       steps:
                           - step:
