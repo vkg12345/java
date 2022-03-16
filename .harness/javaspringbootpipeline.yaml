@@ -83,7 +83,7 @@ pipeline:
                         errors:
                             - AllErrors
                         action:
-                            type: StageRollback
+                            type: Abort
         - stage:
               name: deploy
               identifier: deploy
