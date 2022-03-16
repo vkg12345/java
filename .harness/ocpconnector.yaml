@@ -1,0 +1,19 @@
+connector:
+  name: ocpconnector
+  identifier: ocpconnector
+  description:
+  orgIdentifier: default
+  projectIdentifier: Demo_Project
+  type: K8sCluster
+  spec:
+    credential:
+      type: ManualConfig
+      spec:
+        masterUrl: https://console-openshift-console.apps.sandbox-m2.ll9k.p1.openshiftapps.com/
+        auth:
+          type: UsernamePassword
+          spec:
+            username: varunk1234
+            passwordRef: ocpsecrets
+    delegateSelectors:
+    - aksconnector
