@@ -1,4 +1,4 @@
-name: javaspringboot
+name: <+pipeline.name>
 replicas: 2
 
 image: <+artifact.image>
