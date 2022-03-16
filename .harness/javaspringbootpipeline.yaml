@@ -44,9 +44,7 @@ pipeline:
                                           connectorRef: Jfrog_harness_integration
                                           repo: harnessdev.jfrog.io/docker-local/javasprongboot
                                           tags:
-                                              - latest
-                                          dockerfile: Dockerfile
-                                          context: "."
+                                              - <+pipeline.sequenceId>
                                 - step:
                                       type: ArtifactoryUpload
                                       name: upload artifact
