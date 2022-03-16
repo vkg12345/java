@@ -95,7 +95,7 @@ pipeline:
                           type: KubernetesDirect
                           spec:
                               connectorRef: org.AKSConnector
-                              namespace: javaspring
+                              namespace: harnessdemo
                               releaseName: release-<+INFRA_KEY>
                       allowSimultaneousDeployments: false
                   execution:
