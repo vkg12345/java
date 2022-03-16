@@ -54,6 +54,48 @@ pipeline:
                                           target: lib/
                                           sourcePath: /harness/target/*.jar
         - stage:
+              name: dev approval
+              identifier: dev_approval
+              description: ""
+              type: Approval
+              spec:
+                  execution:
+                      steps:
+                          - step:
+                                name: Approval
+                                identifier: approval
+                                type: HarnessApproval
+                                timeout: 1d
+                                spec:
+                                    approvalMessage: |-
+                                        Please review the following information
+                                        and approve the pipeline progression
+                                    includePipelineExecutionHistory: true
+                                    approvers:
+                                        minimumCount: 1
+                                        disallowPipelineExecutor: false
+                                        userGroups:
+                                            - account.dev_approval
+                                    approverInputs: []
+                                failureStrategies:
+                                    - onFailure:
+                                          errors:
+                                              - AllErrors
+                                          action:
+                                              type: Abort
+                                    - onFailure:
+                                          errors:
+                                              - AllErrors
+                                          action:
+                                              type: Abort
+              tags: {}
+              failureStrategies:
+                  - onFailure:
+                        errors:
+                            - AllErrors
+                        action:
+                            type: Abort
+        - stage:
               name: deploy
               identifier: deploy
               description: ""
