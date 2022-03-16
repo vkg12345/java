@@ -74,6 +74,21 @@ pipeline:
                                           imagePath: docker-local/javasprongboot
                                           tag: <+input>
                                       type: DockerRegistry
+                              manifests:
+                                  - manifest:
+                                        identifier: deployment
+                                        type: K8sManifest
+                                        spec:
+                                            store:
+                                                type: Github
+                                                spec:
+                                                    connectorRef: org.gitconnector
+                                                    gitFetchType: Branch
+                                                    paths:
+                                                        - deployment.yaml
+                                                    repoName: java
+                                                    branch: master
+                                            skipResourceVersioning: false
                   infrastructure:
                       environmentRef: dev
                       infrastructureDefinition:
