@@ -1,7 +1,6 @@
 connector:
   name: ocpconnector
   identifier: ocpconnector
-  description:
   orgIdentifier: default
   projectIdentifier: Demo_Project
   type: K8sCluster
