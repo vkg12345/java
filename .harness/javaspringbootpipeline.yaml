@@ -1,7 +1,7 @@
 pipeline:
     name: javaspringbootpipeline
     identifier: javaspringbootpipeline
-    allowStageExecutions: false
+    allowStageExecutions: true
     projectIdentifier: Demo_Project
     orgIdentifier: default
     tags: {}
