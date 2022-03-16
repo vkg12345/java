@@ -89,20 +89,6 @@ pipeline:
                                                     repoName: java
                                                     branch: master
                                             skipResourceVersioning: false
-                                  - manifest:
-                                        identifier: service
-                                        type: K8sManifest
-                                        spec:
-                                            store:
-                                                type: Github
-                                                spec:
-                                                    connectorRef: org.gitconnector
-                                                    gitFetchType: Branch
-                                                    paths:
-                                                        - service.yaml
-                                                    repoName: java
-                                                    branch: master
-                                            skipResourceVersioning: false
                   infrastructure:
                       environmentRef: dev
                       infrastructureDefinition:
