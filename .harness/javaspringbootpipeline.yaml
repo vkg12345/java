@@ -65,7 +65,13 @@ pipeline:
                           type: Kubernetes
                           spec:
                               variables: []
-                              artifacts: {}
+                              artifacts:
+                                  primary:
+                                      spec:
+                                          connectorRef: Jfrog_harness_integration
+                                          imagePath: docker-local/javasprongboot
+                                          tag: <+input>
+                                      type: DockerRegistry
                               manifests:
                                   - manifest:
                                         identifier: deployment
