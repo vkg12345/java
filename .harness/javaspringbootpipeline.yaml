@@ -163,5 +163,5 @@ pipeline:
                         errors:
                             - AllErrors
                         action:
-                            type: Abort
+                            type: StageRollback
               variables: []
